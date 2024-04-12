@@ -114,6 +114,8 @@ local function GPKUSWF_fake_script() -- getkey.LocalScript
 	local script = Instance.new('LocalScript', getkey)
 
 	script.Parent.MouseButton1Click:Connect(function()
+		setclipboard(tostring("https://shorturl.at/brVY3"))
+		--[[
 		game.StarterGui:SetCore("SendNotification", {
 			Title = "do you want to copy Website";
 			Text = "Getkey!";
@@ -122,8 +124,9 @@ local function GPKUSWF_fake_script() -- getkey.LocalScript
 			Button2 = "No Thank";
 			Callback = script.Button_Click
 		})
+		-]]
 	end)
-	
+	--[[
 	script.Button_Click.OnInvoke = function(buttonText)
 		if buttonText == "Copy" then
 			setclipboard(tostring("https://shorturl.at/brVY3"))
@@ -134,6 +137,7 @@ local function GPKUSWF_fake_script() -- getkey.LocalScript
 		end
 	end
 end
+--]]
 coroutine.wrap(GPKUSWF_fake_script)()
 local function NXQEBG_fake_script() -- Check.LocalScript 
 	local script = Instance.new('LocalScript', Check)
@@ -144,12 +148,14 @@ local function NXQEBG_fake_script() -- Check.LocalScript
 	
 	script.Parent.MouseButton1Click:Connect(function()
 		if script.Parent.Parent.TextBox.Text == key.Key1 then
-			script.Parent.Parent.Parent.ui_key.Visible = false
+				script.Parent.Parent.Parent.ui_key.Visible = false
+				--[[
 			game.StarterGui:SetCore("SendNotification", {
 				Title = "success";
 				Text = "Thank you";
 				Icon = "rbxassetid://12900311398";
 			})
+			--]]
 			wait(2)
 			loadstring(loadstring(game:HttpGet("https://raw.githubusercontent.com/Aegona/Execute_V1/main/README.md"))())
 		end
